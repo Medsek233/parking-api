@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->foreignId('zone_id')->constrained()->cascadeOnDelete();
             $table->foreignId('vehicle_id')->constrained()->cascadeOnDelete();
             $table->dateTime('start_time');
-            $table->dateTime('stop_time');
+            $table->dateTime('stop_time')->nullable();
             $table->integer('total_price');
             $table->softDeletes();
             $table->timestamps();

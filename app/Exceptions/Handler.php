@@ -33,6 +33,12 @@ class Handler extends ExceptionHandler
                     'message' => 'Vehicle record not found.'
                 ], 404);
             }
+            if ($request->is('api/v1/parkings/*')) {
+                return response()->json([
+                    'message' => 'Parking record not found.'
+                ], 404);
+            }
+
         });
     }
 }
