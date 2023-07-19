@@ -44,4 +44,8 @@ class ParkingController extends Controller
 
         return ParkingResource::make($parking);
     }
+    public function stoppedParkings()
+    {
+        return ParkingResource::collection(Parking::with('vehicle', 'zone')->whereNotNull('stop_time')->get());
+    }
 }
